@@ -1,3 +1,30 @@
-h1 {
-  color: red;
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+.grid {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 5fr 2rem;
+  grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: palevioletred;
+}
+
+.main {
+  grid-area: main;
+  background-color: salmon;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: goldenrod;
 }
