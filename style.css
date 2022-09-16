@@ -1,30 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap');
+
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  font-family: 'Libre Baskerville', serif;
   overflow-y: hidden;
 }
+
 .grid {
-  height: 100vh;
+  min-height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 5fr 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: min-content 8fr min-content;
   grid-template-areas: 
     "header header header"
-    "main main main"
+    "main main aside"
     "footer footer footer";
 }
 
 .header {
   grid-area: header;
-  background-color: palevioletred;
+  background-color: #D2DAFF;
 }
 
 .main {
   grid-area: main;
-  background-color: salmon;
+  background-color: #C6EBC5;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: #FAF4B7;
 }
 
 .footer {
   grid-area: footer;
-  background-color: goldenrod;
+  background-color: #EEF1FF;
+}
+
+/* main  */
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
 }
