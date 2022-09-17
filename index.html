@@ -15,12 +15,24 @@
     </header>
     <main class="main">
       <h2>Books</h2>
-      <div class="books">
-        <div class="card">
-          <h4 class="book-title">1984</h4>
-          <p class="book-author">George Orwell</p>
-          <p class="book-pages">304</p>
-          <p class="read">Yes</p>
+      <div class="books" id="books">
+        <div class="book-card">
+          <p class="book-title">Title: 1984</p>
+          <p class="book-author">Author: George Orwell</p>
+          <p class="book-pages">Pages: 304</p>
+          <p class="book-read">Read: Yes</p>
+        </div>
+        <div class="book-card">
+          <p class="book-title">Title: Animal Farm</p>
+          <p class="book-author">Author: George Orwell</p>
+          <p class="book-pages">Pages: 304</p>
+          <p class="book-read">Read: Yes</p>
+        </div>
+        <div class="book-card">
+          <p class="book-title">Title: Homage to Catalonia</p>
+          <p class="book-author">Author: George Orwell</p>
+          <p class="book-pages">Pages: 304</p>
+          <p class="book-read">Read: Yes</p>
         </div>
       </div>
     </main>
@@ -38,7 +50,7 @@
           </div>
           <div class="book-input">
             <label for="pages">Pages:</label>
-            <input type="text" name="pages" id="pages" class="form-input">
+            <input type="number" min="0" name="pages" id="pages" class="form-input">
           </div>
           <div class="book-input">
             <label for="read">Read:</label>

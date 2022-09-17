@@ -4,14 +4,19 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Work Sans', sans-serif;
   overflow-y: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Libre Baskerville', serif;
+
 }
 
 .grid {
   min-height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr .75fr;
   grid-template-rows: min-content 8fr min-content;
   grid-template-areas: 
     "header header header"
@@ -46,10 +51,12 @@ body {
   gap: 1rem;
 }
 
-.card {
+.book-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: 'Work Sans';
+  font-weight: 400;
   background-color: white;
   border-radius: 8px;
   padding: 1em;
