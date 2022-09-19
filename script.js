@@ -32,11 +32,14 @@ BookCard.prototype.createBookCard = (book) => {
   title.textContent = `Title: ${book.title}`;
   author.textContent = `Author: ${book.author}`;
   pages.textContent = `Pages: ${book.pages}`;
+  console.log(book.read)
   
   if (book.read) {
     read.textContent = `Status: Read`
+    card.classList.add("status-read")
   } else {
     read.textContent = `Status: Not Read`
+    card.classList.add("status-not-read")
   }
 
   // append
@@ -53,7 +56,7 @@ bookForm.addEventListener('submit', (e) => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const pages = document.getElementById('pages').value;
-  const read = document.getElementById('read').value;
+  const read = document.getElementById('read').checked;
 
   // add book to library
   const book = new Book(title, author, pages, read);
