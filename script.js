@@ -32,7 +32,12 @@ BookCard.prototype.createBookCard = (book) => {
   title.textContent = `Title: ${book.title}`;
   author.textContent = `Author: ${book.author}`;
   pages.textContent = `Pages: ${book.pages}`;
-  read.textContent = `Read: ${book.read}`
+  
+  if (book.read) {
+    read.textContent = `Status: Read`
+  } else {
+    read.textContent = `Status: Not Read`
+  }
 
   // append
   card.appendChild(title);
