@@ -74,7 +74,7 @@ h3 {
 .library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  grid-auto-rows: 16rem;
+  grid-auto-rows: 15rem;
   gap: 2rem;
   margin: 1.25rem 0;
 }
@@ -108,6 +108,10 @@ h3 {
   font-size: 1.25rem;
   font-weight: 600;
 }
+.book-author {
+  font-size: 	1.125rem;
+  font-style: italic;
+}
 .status-read {
   border-left: .5rem solid var(--green)
 }
@@ -129,8 +133,8 @@ h3 {
 .modal {
   color: var(--black);
   background-color: var(--white);
-  width: 25%;
-  height: 50%;
+  width: 22.5rem;
+  height: 30rem;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 5px 1px;
@@ -152,13 +156,13 @@ h3 {
 .book-inputs {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   gap: .5rem;
   padding: .5rem 0;
 }
 .book-inputs.checkbox {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   margin-bottom: .5rem;
@@ -189,7 +193,22 @@ input[type="submit"] {
 }
 
 .footer {
-  text-align: center;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
+  gap: 0.625em;
+  width: 100%;
   margin-top: auto;
+  padding: .4em;
+  font-size: 1rem;
+}
+
+.github-logo {
+  height: 1.5em;
+  transition: transform 0.4s ease-in-out;
+}
+
+.github-logo:hover {
+  transform: rotateY(0.5turn) scale(1.4);
 }
