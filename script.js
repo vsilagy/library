@@ -1,5 +1,8 @@
 const bookForm = document.getElementById('book-form');
 const libraryGrid = document.getElementById('library-grid');
+const newBookBtn = document.getElementById('new-book')
+const modalContainer = document.querySelector('.modal-container');
+const closeModalBtn = document.querySelector('.close-modal');
 
 let myLibrary = [];
 
@@ -19,25 +22,28 @@ BookCard.prototype.createBookCard = (book) => {
   const title = document.createElement('p');
   const author = document.createElement('p');
   const pages = document.createElement('p');
-  const read = document.createElement('p');
+  const read = document.createElement('button');
+  const remove = document.createElement('button')
 
   // add classes
   card.classList.add("book-card");
   title.classList.add("book-title");
   author.classList.add("book-author");
   pages.classList.add("book-pages");
-  read.classList.add("book-read");
+  read.classList.add("book-status");
+  remove.classList.add("book-remove")
 
   // update content
-  title.textContent = `Title: ${book.title}`;
-  author.textContent = `Author: ${book.author}`;
-  pages.textContent = `Pages: ${book.pages}`;
+  title.textContent = `${book.title}`;
+  author.textContent = `By ${book.author}`;
+  pages.textContent = `No Pages: ${book.pages}`;
+  remove.textContent = `Remove`
   
   if (book.read) {
-    read.textContent = `Status: Read`
+    read.textContent = `Read`
     card.classList.add("status-read")
   } else {
-    read.textContent = `Status: Not Read`
+    read.textContent = `Not Read`
     card.classList.add("status-not-read")
   }
 
@@ -46,6 +52,7 @@ BookCard.prototype.createBookCard = (book) => {
   card.appendChild(author);
   card.appendChild(pages);
   card.appendChild(read);
+  card.appendChild(remove)
   libraryGrid.appendChild(card);
 }
 
@@ -63,6 +70,16 @@ bookForm.addEventListener('submit', (e) => {
   const bookCard = new BookCard();
   
   bookCard.createBookCard(book);
+ 
+  // close modal
+  modalContainer.style.display = "none"
+})
 
+newBookBtn.addEventListener('click', (e) => {
+  modalContainer.style.display = "flex"
+})
+
+closeModalBtn.addEventListener('click', (e) => {
+  modalContainer.style.display = "none"
 })
 
