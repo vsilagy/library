@@ -1,5 +1,5 @@
 const bookForm = document.getElementById('book-form');
-const books = document.getElementById('books');
+const libraryGrid = document.getElementById('library-grid');
 
 let myLibrary = [];
 
@@ -32,7 +32,6 @@ BookCard.prototype.createBookCard = (book) => {
   title.textContent = `Title: ${book.title}`;
   author.textContent = `Author: ${book.author}`;
   pages.textContent = `Pages: ${book.pages}`;
-  console.log(book.read)
   
   if (book.read) {
     read.textContent = `Status: Read`
@@ -47,7 +46,7 @@ BookCard.prototype.createBookCard = (book) => {
   card.appendChild(author);
   card.appendChild(pages);
   card.appendChild(read);
-  books.appendChild(card);
+  libraryGrid.appendChild(card);
 }
 
 // Event Listener
