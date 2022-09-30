@@ -6,13 +6,11 @@
   --red: orangered;
   --grey: #dcdcdc;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   height: 100vh;
   font-family: 'Work Sans', sans-serif;
@@ -191,7 +189,6 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
 }
-
 .footer {
   display: flex;
   align-items: center;
@@ -203,12 +200,10 @@ input[type="submit"] {
   padding: .4em;
   font-size: 1rem;
 }
-
 .github-logo {
   height: 1.5em;
   transition: transform 0.4s ease-in-out;
 }
-
 .github-logo:hover {
   transform: rotateY(0.5turn) scale(1.4);
 }
