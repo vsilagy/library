@@ -1,6 +1,6 @@
 const form = document.getElementById('book-form');
 const newBookBtn = document.getElementById('new-book');
-const libraryGrid = document.getElementById('library-grid');
+const library = document.getElementById('library');
 const modalContainer = document.querySelector('.modal-container');
 const closeModalBtn = document.querySelector('.close-modal');
 
@@ -8,7 +8,8 @@ let myLibrary = [];
 myLibrary.push(
   new Book("Heart of Darkness", "Joseph Conrad", "188", true),
   new Book("1984", "George Orwell", "304", true),
-  new Book("Blood Meridian", "Cormac McCarthy", "351", true)
+  new Book("Blood Meridian", "Cormac McCarthy", "351", true),
+  new Book("Fictions", "Jorge Luis Borges", "192", false)
   )
   
 renderLibrary()
@@ -31,43 +32,54 @@ function addBookToLibrary() {
   renderLibrary()
 }
 
-function createBookCard(book) {
-    const card = document.createElement('div');
-    const title = document.createElement('p');
-    const author = document.createElement('p');
-    const pages = document.createElement('p');
-    const readBtn = document.createElement('button');
-    const removeBtn = document.createElement('button')
+function createBookCard(book, index) {
+  // div card
+  const card = document.createElement('div');
+  card.classList.add("book-card");
+  card.setAttribute("data-index", index);
+  // p title
+  const title = document.createElement('p');
+  title.classList.add("book-title");
+  title.textContent = `${book.title}`;
+  // p author
+  const author = document.createElement('p');
+  author.classList.add("book-author");
+  author.textContent = `By ${book.author}`;
+  // p pages
+  const pages = document.createElement('p');
+  pages.classList.add("book-pages");
+  pages.textContent = `No Pages: ${book.pages}`;
+  // toggle read btn
+  const readBtn = document.createElement('button');
+  readBtn.classList.add("book-status");
+  if (book.status) {
+    readBtn.textContent = `Read`
+    card.classList.add("status-read")
+  } else {
+    readBtn.textContent = `Not Read`
+    card.classList.add("status-not-read")
+  }
+  // remove card btn
+  const removeBtn = document.createElement('button')
+  removeBtn.classList.add("book-remove")
+  removeBtn.textContent = `Remove`
+  // append
+  card.appendChild(title);
+  card.appendChild(author);
+  card.appendChild(pages);
+  card.appendChild(readBtn);
+  card.appendChild(removeBtn)
+  library.appendChild(card);
 
-    // add classes
-    card.classList.add("book-card");
-    title.classList.add("book-title");
-    author.classList.add("book-author");
-    pages.classList.add("book-pages");
-    readBtn.classList.add("book-status");
-    removeBtn.classList.add("book-remove")
+  readBtn.addEventListener("click", () => {
+    book.status = !book.status;
+    renderLibrary()
+  })
 
-    // update content
-    title.textContent = `${book.title}`;
-    author.textContent = `By ${book.author}`;
-    pages.textContent = `No Pages: ${book.pages}`;
-    removeBtn.textContent = `Remove`
-    
-    if (book.status) {
-      readBtn.textContent = `Read`
-      card.classList.add("status-read")
-    } else {
-      readBtn.textContent = `Not Read`
-      card.classList.add("status-not-read")
-    }
-
-    // append
-    card.appendChild(title);
-    card.appendChild(author);
-    card.appendChild(pages);
-    card.appendChild(readBtn);
-    card.appendChild(removeBtn)
-    libraryGrid.appendChild(card);
+  removeBtn.addEventListener("click", () => {
+    myLibrary.splice(index, 1)
+    renderLibrary()
+  })
 }
 
 // Event Listener
@@ -86,11 +98,10 @@ closeModalBtn.addEventListener('click', () => {
   modalContainer.style.display = "none"
 })
 
-
 // Render Library
 function renderLibrary () {
-  libraryGrid.textContent = "";
-  myLibrary.map((book) => {
-    createBookCard(book)
+  library.textContent = "";
+  myLibrary.map((book, index) => {
+    createBookCard(book, index)
   });
 }
