@@ -5,11 +5,13 @@ const modalContainer = document.querySelector('.modal-container');
 const closeModalBtn = document.querySelector('.close-modal');
 
 let myLibrary = [];
+// my books
 myLibrary.push(
   new Book("Heart of Darkness", "Joseph Conrad", "188", true),
   new Book("1984", "George Orwell", "304", true),
   new Book("Blood Meridian", "Cormac McCarthy", "351", true),
-  new Book("Fictions", "Jorge Luis Borges", "192", false)
+  new Book("Fictions", "Jorge Luis Borges", "192", false),
+  new Book("The Outsider", "Albert Camus", "119", true )
   )
   
 renderLibrary()
@@ -48,7 +50,10 @@ function createBookCard(book, index) {
   // p pages
   const pages = document.createElement('p');
   pages.classList.add("book-pages");
-  pages.textContent = `No Pages: ${book.pages}`;
+  pages.textContent = `${book.pages} pages`;
+  // div buttons
+  const buttons = document.createElement('div');
+  buttons.classList.add('book-buttons')
   // toggle read btn
   const readBtn = document.createElement('button');
   readBtn.classList.add("book-status");
@@ -67,15 +72,15 @@ function createBookCard(book, index) {
   card.appendChild(title);
   card.appendChild(author);
   card.appendChild(pages);
-  card.appendChild(readBtn);
-  card.appendChild(removeBtn)
+  card.appendChild(buttons)
+  buttons.appendChild(readBtn);
+  buttons.appendChild(removeBtn)
   library.appendChild(card);
-
+  // toggle read status
   readBtn.addEventListener("click", () => {
     book.status = !book.status;
     renderLibrary()
   })
-
   removeBtn.addEventListener("click", () => {
     myLibrary.splice(index, 1)
     renderLibrary()
@@ -101,7 +106,8 @@ closeModalBtn.addEventListener('click', () => {
 // Render Library
 function renderLibrary () {
   library.textContent = "";
-  myLibrary.map((book, index) => {
+  // add index
+  myLibrary.forEach((book, index) => {
     createBookCard(book, index)
   });
 }
