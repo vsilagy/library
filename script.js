@@ -107,7 +107,7 @@ closeModalBtn.addEventListener('click', () => {
 function renderLibrary () {
   library.textContent = "";
   // add index
-  myLibrary.forEach((book, index) => {
+  myLibrary.map((book, index) => {
     createBookCard(book, index)
   });
 }
