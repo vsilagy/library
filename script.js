@@ -5,6 +5,16 @@ const modalContainer = document.querySelector('.modal-container');
 const closeModalBtn = document.querySelector('.close-modal');
 
 let myLibrary = [];
+
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+}
+
 // my books
 myLibrary.push(
   new Book("Heart of Darkness", "Joseph Conrad", "188", true),
@@ -15,13 +25,6 @@ myLibrary.push(
   )
   
 renderLibrary()
-// book constructor
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
-}
 
 function addBookToLibrary() {
   let title = document.getElementById('title').value;
