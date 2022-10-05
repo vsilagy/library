@@ -4,7 +4,6 @@ const library = document.getElementById('library');
 const modalContainer = document.querySelector('.modal-container');
 const closeModalBtn = document.querySelector('.close-modal');
 
-let myLibrary = [];
 
 class Book {
   constructor(title, author, pages, status) {
@@ -14,6 +13,15 @@ class Book {
     this.status = status;
   }
 }
+
+// class Library {
+//   constructor() {
+//     this.books = []
+//   }
+
+// }
+
+let myLibrary = [];
 
 // my books
 myLibrary.push(
@@ -89,7 +97,6 @@ function createBookCard(book, index) {
     renderLibrary()
   })
 }
-
 // Event Listener
 form.addEventListener('submit', (e) => {
   addBookToLibrary();
