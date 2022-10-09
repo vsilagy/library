@@ -1,22 +1,22 @@
 # Library
 
-[Live Preview](https://vsilagy.github.io/library/)
-
-### **The Odin Project** : [Library Project](https://www.theodinproject.com/lessons/node-path-javascript-library)
+A simple library app that store books in an array and creates a book card for each book
 
 ![library](./img/screenshot.png)
 
-## Built with
+[Live Preview](https://vsilagy.github.io/library/)
 
-### Technologies
+## Built with:
 
-<p align="left"> 
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://img.icons8.com/color/48/000000/javascript.png"/> </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"> <img src="https://img.icons8.com/color/48/000000/css3.png"/> </a> 
-    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"> <img src="https://img.icons8.com/color/48/000000/html-5.png"/> </a> 
-</p>
+![Stack](https://skills.thijs.gg/icons?i=html,css,js)
 
-## Objectives:
+- HTML
+- CSS
+- JavaScript
+
+### **The Odin Project**: [Library Project](https://www.theodinproject.com/lessons/node-path-javascript-library)
+
+#### Objectives:
 
 - build a library
 - store books in an array

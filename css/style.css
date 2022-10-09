@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap");
 :root {
   --black: #080808;
   --white: #fff;
-  --green: #59CE8F;
-  --red: #EC7272;
+  --green: #59ce8f;
+  --red: #ec7272;
 }
 * {
   margin: 0;
@@ -12,13 +12,16 @@
 }
 body {
   height: 100vh;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-h1, h2, h3, .btn {
-  font-family: 'Libre Baskerville', serif;
+h1,
+h2,
+h3,
+.btn {
+  font-family: "Libre Baskerville", serif;
   font-weight: 700;
 }
 h1 {
@@ -37,7 +40,7 @@ h3 {
   padding: 1rem;
 }
 .header {
-  background-color: var(--black);  
+  background-color: var(--black);
 }
 .header.container {
   display: flex;
@@ -56,7 +59,7 @@ h3 {
 .btn {
   font-size: 1.5rem;
   font-weight: 600;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background-color: var(--black);
   color: var(--white);
   border: 1px solid var(--black);
@@ -96,7 +99,7 @@ h3 {
   font-weight: 600;
 }
 .book-author {
-  font-size: 	1.25rem;
+  font-size: 1.25rem;
   font-style: italic;
 }
 .book-buttons {
@@ -108,16 +111,16 @@ h3 {
   font-size: 1rem;
   font-family: inherit;
   font-weight: 600;
-  padding: .5em;
+  padding: 0.5em;
   border: none;
   border-radius: 8px;
   width: 8rem;
 }
 .status-read {
-  border-left: .5rem solid var(--green);
+  border-left: 0.5rem solid var(--green);
 }
 .status-not-read {
-  border-left: .5rem solid var(--red)
+  border-left: 0.5rem solid var(--red);
 }
 .modal-container {
   display: none;
@@ -157,8 +160,8 @@ h3 {
 .book-inputs {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
-  padding: .5rem 0;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 .book-inputs.checkbox {
   display: flex;
@@ -166,7 +169,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 label {
   font-size: 1.25rem;
@@ -174,9 +177,9 @@ label {
 input {
   width: 100%;
   font-size: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 6px;
-  border: 1px solid rgba(99, 99, 99, 0.5)
+  border: 1px solid rgba(99, 99, 99, 0.5);
 }
 input[type="checkbox"] {
   flex: 1;
